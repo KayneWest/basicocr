@@ -1,0 +1,18 @@
+<!--doctype html>
+<title>Hello from Flask</title>
+{% for item in texts %} 
+	<h1>{{item[1]}}<img src="{{ url_for('send_file', filename=item[0]) }}"></h1>
+{% else %}
+	<h1>no image for whatever reason</h1>
+{% endfor %}-->
+
+
+<!doctype html>
+<title>OCR Demo</title>
+{% for item in results %} <!--name is first [0] -->
+	<h1><img src="{{ url_for('send_file', filename=item[0]) }}"></h1>
+	<h2>predicted text: {{item[1]}}</h2>
+	<p>-------<p>
+{% else %}
+	<h1>no image for whatever reason</h1>
+{% endfor %}
